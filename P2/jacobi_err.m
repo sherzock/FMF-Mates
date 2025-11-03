@@ -1,4 +1,4 @@
-function [x] = jacobi_err(A, b, x0, tol, max_it)
+function [x, k] = jacobi_err(A, b, x0, tol, max_it)
     % JACOBI_ERR Resuelve el sistema de ecuaciones Ax = b usando el método de Jacobi con criterio de error.
     %
     %   [x] = JACOBI_ERR(A, b, x0, tol, max_it) resuelve el sistema de ecuaciones lineales Ax = b
