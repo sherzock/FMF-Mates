@@ -1,4 +1,4 @@
-function [x] gs_it(A, b, it)
+function [x] = gs_it(A, b, it)
     % GS_IT Resuelve el sistema de ecuaciones Ax = b usando el método de Gauss-Seidel.
     %
     %   [x] = GS_IT(A, b, it) resuelve el sistema de ecuaciones lineales Ax = b
