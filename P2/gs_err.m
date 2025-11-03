@@ -1,4 +1,4 @@
-function [x] = gs_err(A, b, x0, tol, max_it)
+function [x, k] = gs_err(A, b, x0, tol, max_it)
     % GS_ERR Resuelve el sistema de ecuaciones Ax = b usando el método de Gauss-Seidel con criterio de error.
     %
     %   [x] = GS_ERR(A, b, x0, tol, max_it) resuelve el sistema de ecuaciones lineales Ax = b
