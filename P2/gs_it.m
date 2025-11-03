@@ -1,4 +1,4 @@
-function [x] = gs_it(A, b, it)
+function [x] = gs_it(A, b, it, x0)
     % GS_IT Resuelve el sistema de ecuaciones Ax = b usando el método de Gauss-Seidel.
     %
     %   [x] = GS_IT(A, b, it) resuelve el sistema de ecuaciones lineales Ax = b
@@ -13,7 +13,7 @@ function [x] = gs_it(A, b, it)
     %       x  - Vector solución aproximada después de 'it' iteraciones.
 
     n = length(b);         % Número de ecuaciones
-    x = zeros(n, 1);       % Inicialización del vector solución
+    x = x0;       % Inicialización del vector solución
 
     for k = 1:it
         for i = 1:n
