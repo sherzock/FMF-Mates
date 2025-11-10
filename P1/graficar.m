@@ -20,15 +20,15 @@ close all;     % Cierra todas las figuras abiertas
 % Modifica estas tres líneas para experimentar
 
 % 1. Función que se va a interpolar (usa el formato de handle @(x) ...)
-f = @(x) exp(x);
+% f = @(x) exp(x);
 % La otra función para probar:
-% f = @(x) cos(x*x - 1);
+f = @(x) cos(power(x, 2) - 1);
 
 % 2. Grado del polinomio interpolador
-n = 1;
+n = 2;
 
 % 3. Intervalo de interpolación y ploteo [limite_inferior, limite_superior]
-intervalo = [0, 1];
+intervalo = [0, 2*pi];
 
 % --- PARÁMETROS TÉCNICOS ---
 % Número de puntos para generar los gráficos (a mayor número, más suave la curva)

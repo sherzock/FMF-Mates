@@ -1,4 +1,4 @@
-function [x, k] = jacobi_err(A, b, x0, tol, max_it)
+function [x, it] = jacobi_err(A, b, x0, tol, max_it)
     % JACOBI_ERR Resuelve el sistema de ecuaciones Ax = b usando el método de Jacobi con criterio de error.
     %
     %   [x] = JACOBI_ERR(A, b, x0, tol, max_it) resuelve el sistema de ecuaciones lineales Ax = b
@@ -16,9 +16,11 @@ function [x, k] = jacobi_err(A, b, x0, tol, max_it)
     %       x      - Vector solución aproximada.
 
     n = length(b);         % Número de ecuaciones
-    x = x0;                % Inicialización del vector solución
+    x = x0;                % Inicialización del vector solución'
+    it = 0;
 
     for k = 1:max_it
+        it = it + 1;
         x_new = zeros(n, 1); % Nuevo vector solución para esta iteración
         for i = 1:n
             sum_ax = 0;
