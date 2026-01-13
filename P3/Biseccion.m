@@ -1,8 +1,13 @@
 function [raiz, iter] = Biseccion(f, a, b, tol)
+    syms x
+
+    f_sym = f;
+    f = matlabFunction(f_sym, 'Vars', x);
+
     if f(a) * f(b) > 0
         error('f(a) y f(b) deben tener signos opuestos.');
     end
-
+    
     maxIter = ceil(log((b - a) / tol)) / log(2);
 
     for iter = 1:maxIter
@@ -21,6 +26,6 @@ function [raiz, iter] = Biseccion(f, a, b, tol)
         end
     end
 
-    raiz = (a + b)/2; 
+    raiz = (a + b)/2;
     warning('Se alcanzó el número máximo de iteraciones (%d) sin converger.', maxIter);
 end
