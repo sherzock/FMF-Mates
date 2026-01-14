@@ -1,34 +1,4 @@
 function y_poly = polinomio_lagrange(x_eval, n, f)
-%EVALUARLAGRANGE_AUTO Evalúa el polinomio de Lagrange usando el rango de x_eval.
-%
-%   Sintaxis:
-%       y_poly = evaluarLagrange_auto(x_eval, n, f)
-%
-%   Descripción:
-%       Calcula los valores del polinomio interpolador de Lagrange P(x) de
-%       grado 'n' para una función 'f'. El intervalo para generar los n+1
-%       nodos de interpolación se determina automáticamente a partir de los
-%       valores mínimo y máximo del vector 'x_eval'.
-%
-%   Argumentos de entrada:
-%       x_eval    - Vector de puntos 'x' en los que se desea evaluar el
-%                   polinomio. El rango [min(x_eval), max(x_eval)] se usará
-%                   para la interpolación.
-%       n         - Grado del polinomio interpolador.
-%       f         - Handle de la función a interpolar (ej. @cos).
-%
-%   Argumentos de salida:
-%       y_poly    - Vector con los valores del polinomio P(x) evaluado en
-%                   cada punto de x_eval.
-%
-%   Ejemplo de uso:
-%       f = @(x) sin(x);
-%       n = 5;
-%       x_grafico = linspace(0, 2*pi, 300);
-%       y_grafico = evaluarLagrange_auto(x_grafico, n, f);
-%       plot(x_grafico, y_grafico);
-
-% --- Verificación de entrada ---
 if isempty(x_eval)
     y_poly = [];
     return;
